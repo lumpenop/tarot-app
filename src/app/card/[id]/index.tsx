@@ -1,11 +1,7 @@
-import { View, Text } from "react-native";
+import Card from "@/02.pages/card";
 
 function CardPage() {
-  return (
-    <View>
-      <Text>Card</Text>
-    </View>
-  );
+  return <Card />;
 }
 
 export default CardPage;

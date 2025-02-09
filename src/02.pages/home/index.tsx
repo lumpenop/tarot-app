@@ -1,3 +1,4 @@
+import { Stack } from "expo-router";
 import { View, Text } from "react-native";
 
 function Home() {

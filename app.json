@@ -28,6 +28,9 @@
     "plugins": ["expo-router"],
     "router": {
       "rootPath": "src/app"
+    },
+    "experiments": {
+      "typedRoutes": true
     }
   }
 }
