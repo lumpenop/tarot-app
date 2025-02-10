@@ -1,11 +1,7 @@
-import { View, Text } from 'react-native'
+import About from '@/02.pages/about'
 
-function About() {
-  return (
-    <View>
-      <Text>About</Text>
-    </View>
-  )
+function AboutPage() {
+  return <About />
 }
 
-export default About
+export default AboutPage

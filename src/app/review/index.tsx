@@ -1,11 +1,7 @@
-import { View, Text } from "react-native";
+import Review from '@/02.pages/review'
 
 function ReviewPage() {
-  return (
-    <View>
-      <Text>Review</Text>
-    </View>
-  );
+  return <Review />
 }
 
-export default ReviewPage;
+export default ReviewPage

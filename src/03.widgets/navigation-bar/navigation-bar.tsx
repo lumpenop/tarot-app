@@ -1,4 +1,4 @@
-import { Link } from 'expo-router'
+import { Link, usePathname } from 'expo-router'
 import {
   Info,
   WalletCards,
@@ -21,7 +21,10 @@ const menuItems: Array<{
   { href: '/about', label: '안내(준비중)', icon: Info },
 ]
 
+// #A6958C - purple 300
+
 function NavigationBar() {
+  const pathname = usePathname()
   return (
     <View style={{ backgroundColor: '#1e1b4b', opacity: 0.99 }}>
       <View
@@ -33,8 +36,8 @@ function NavigationBar() {
           borderTopWidth: 0.5,
           borderLeftWidth: 0.5,
           borderRightWidth: 0.5,
-          paddingVertical: 8,
-          paddingHorizontal: 21,
+          paddingVertical: 6,
+          paddingHorizontal: 22,
           opacity: 0.7,
           borderColor: '#ffffff',
           borderTopLeftRadius: 20,
@@ -44,8 +47,9 @@ function NavigationBar() {
         }}>
         {menuItems.map(item => {
           const Icon = item.icon
+          const isActive = pathname === item.href
           return (
-            <Link key={item.href} href={item.href}>
+            <Link key={item.href} href={{ pathname: item.href }}>
               <View
                 style={{
                   flex: 1,
@@ -54,8 +58,12 @@ function NavigationBar() {
                   justifyContent: 'center',
                   gap: 5,
                 }}>
-                <Icon size={24} color="#E9D5FF" />
-                <Text style={{ color: '#E9D5FF', fontSize: 12 }}>
+                <Icon size={24} color={isActive ? '#E6ECF0' : '#A6958C'} />
+                <Text
+                  style={{
+                    color: isActive ? '#E6ECF0' : '#A6958C',
+                    fontSize: 12,
+                  }}>
                   {item.label}
                 </Text>
               </View>

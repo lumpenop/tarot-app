@@ -2,12 +2,12 @@ import { View } from 'react-native'
 
 import CustomWebView from '@/03.widgets/custom-webview'
 
-function Spread() {
+function Write() {
   return (
     <View style={{ flex: 1, width: '100%', height: '100%' }}>
-      <CustomWebView path="spread" />
+      <CustomWebView path="review/write" />
     </View>
   )
 }
 
-export default Spread
+export default Write

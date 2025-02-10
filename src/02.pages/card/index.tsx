@@ -1,11 +1,11 @@
-import { View, Text } from "react-native";
+import { View, Text } from 'react-native'
 
 function Card() {
   return (
-    <View>
+    <View style={{ flex: 1 }}>
       <Text>Card</Text>
     </View>
-  );
+  )
 }
 
-export default Card;
+export default Card

@@ -1,11 +1,7 @@
-import { View, Text } from "react-native";
+import Write from '@/02.pages/review/write'
 
 function WritePage() {
-  return (
-    <View>
-      <Text>Write</Text>
-    </View>
-  );
+  return <Write />
 }
 
-export default WritePage;
+export default WritePage

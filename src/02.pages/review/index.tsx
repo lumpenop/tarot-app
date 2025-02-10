@@ -1,11 +1,11 @@
-import { View, Text } from "react-native";
+import CustomWebView from '@/03.widgets/custom-webview'
+import { View } from 'react-native'
 
 function Review() {
   return (
-    <View>
-      <Text>Review</Text>
+    <View style={{ flex: 1, width: '100%', height: '100%' }}>
+      <CustomWebView path="review" />
     </View>
-  );
+  )
 }
-
-export default Review;
+export default Review
