@@ -26,51 +26,48 @@ const menuItems: Array<{
 function NavigationBar() {
   const pathname = usePathname()
   return (
-    <View style={{ backgroundColor: '#1e1b4b', opacity: 0.99 }}>
-      <View
-        style={{
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-          gap: 10,
-          width: '100%',
-          borderTopWidth: 0.5,
-          borderLeftWidth: 0.5,
-          borderRightWidth: 0.5,
-          paddingVertical: 6,
-          paddingHorizontal: 22,
-          opacity: 0.7,
-          borderColor: '#ffffff',
-          borderTopLeftRadius: 20,
-          borderTopRightRadius: 20,
-          backgroundColor: '#000',
-          transform: [{ scale: 1.01 }],
-        }}>
-        {menuItems.map(item => {
-          const Icon = item.icon
-          const isActive = pathname === item.href
-          return (
-            <Link key={item.href} href={{ pathname: item.href }}>
-              <View
+    <View
+      style={{
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        gap: 10,
+        width: '100%',
+        borderTopWidth: 0.5,
+        borderLeftWidth: 0.5,
+        borderRightWidth: 0.5,
+        paddingVertical: 6,
+        paddingHorizontal: 22,
+        borderColor: '#ffffff',
+        borderTopLeftRadius: 20,
+        borderTopRightRadius: 20,
+        backgroundColor: '#100521',
+        transform: [{ scale: 1.01 }],
+      }}>
+      {menuItems.map(item => {
+        const Icon = item.icon
+        const isActive = pathname === item.href
+        return (
+          <Link key={item.href} href={{ pathname: item.href }}>
+            <View
+              style={{
+                flex: 1,
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: 5,
+              }}>
+              <Icon size={24} color={isActive ? '#E6ECF0' : '#A6958C'} />
+              <Text
                 style={{
-                  flex: 1,
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  gap: 5,
+                  color: isActive ? '#E6ECF0' : '#A6958C',
+                  fontSize: 12,
                 }}>
-                <Icon size={24} color={isActive ? '#E6ECF0' : '#A6958C'} />
-                <Text
-                  style={{
-                    color: isActive ? '#E6ECF0' : '#A6958C',
-                    fontSize: 12,
-                  }}>
-                  {item.label}
-                </Text>
-              </View>
-            </Link>
-          )
-        })}
-      </View>
+                {item.label}
+              </Text>
+            </View>
+          </Link>
+        )
+      })}
     </View>
   )
 }

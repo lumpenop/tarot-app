@@ -48,13 +48,11 @@ export default function Home() {
   // 4. WebView의 injectedJavaScript에서는 return true가 필요할 수 있음 (웹페이지 컨텍스트에서 실행되는 스크립트의 경우)
 
   return (
-    <View style={styles.container}>
-      <CustomWebView
-        ref={webViewRef}
-        handleLoadEnd={handleLoadEnd}
-        handleOnMessage={handleOnMessage}
-      />
-    </View>
+    <CustomWebView
+      ref={webViewRef}
+      handleLoadEnd={handleLoadEnd}
+      handleOnMessage={handleOnMessage}
+    />
   )
 }
 const styles = StyleSheet.create({
