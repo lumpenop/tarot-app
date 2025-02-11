@@ -1,12 +1,11 @@
-import { View, SafeAreaView, StatusBar, Platform } from 'react-native'
-import { Stack, Tabs } from 'expo-router'
+import { View, SafeAreaView, StatusBar } from 'react-native'
+import { Tabs } from 'expo-router'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import NavigationBar from '@/03.widgets/navigation-bar/navigation-bar'
 import React from 'react'
 import { LinearGradient } from 'expo-linear-gradient'
-
+import BannerAds from '@/06.shared/ui/bannerAds'
 function Layout() {
-  const isIOS = Platform.OS === 'ios'
   const insets = useSafeAreaInsets()
   const bottomHeight = insets.bottom
   return (
@@ -28,6 +27,7 @@ function Layout() {
           networkActivityIndicatorVisible={true}
           animated={true}
         />
+        <BannerAds />
         <LinearGradient
           colors={['#3B3D4E', '#6c5ce7', '#3B3D4E']} // indigo-950, purple-900, indigo-950
           start={[0, 0]} // 시작점 (상단)
@@ -45,6 +45,7 @@ function Layout() {
             <Tabs.Screen name="spread" />
             <Tabs.Screen name="review" />
             <Tabs.Screen name="about" />
+            <Tabs.Screen name="card/index" />
           </Tabs>
           <NavigationBar />
         </LinearGradient>

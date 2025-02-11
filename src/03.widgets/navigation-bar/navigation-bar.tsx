@@ -3,18 +3,20 @@ import { Ionicons } from '@expo/vector-icons'
 import { View, Text } from 'react-native'
 
 const menuItems: Array<{
-  href: '/' | '/spread' | '/review' | '/about'
+  href: '/' | '/spread' | '/review' | '/about' | '/card'
   label: string
   icon:
     | 'sparkles-outline'
     | 'wallet-outline'
     | 'chatbubble-outline'
     | 'information-circle-outline'
+    | 'card-outline'
 }> = [
   { href: '/', label: '원카드', icon: 'sparkles-outline' },
   { href: '/spread', label: '스프레드(준비중)', icon: 'wallet-outline' },
   { href: '/review', label: '리뷰', icon: 'chatbubble-outline' },
   { href: '/about', label: '안내(준비중)', icon: 'information-circle-outline' },
+  { href: '/card', label: '카드', icon: 'card-outline' },
 ]
 
 function NavigationBar() {
