@@ -1,5 +1,5 @@
 import { View, SafeAreaView, StatusBar, Platform } from 'react-native'
-import { Stack } from 'expo-router'
+import { Stack, Tabs } from 'expo-router'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import NavigationBar from '@/03.widgets/navigation-bar/navigation-bar'
 import React from 'react'
@@ -33,19 +33,19 @@ function Layout() {
           start={[0, 0]} // 시작점 (상단)
           end={[0, 1]} // 끝점 (하단)
           style={{ flex: 1 }}>
-          <Stack
+          <Tabs
             screenOptions={{
-              headerShown: false, // 각 화면의 상단 헤더(타이틀바)를 표시할지 여부를 설정합니다. false로 설정하면 헤더가 보이지 않습니다.
-              animation: 'none', // 화면 전환 애니메이션 비활성화
-            }}
-            screenListeners={{
-              blur: () => false, // Prevents unmounting on blur
+              headerShown: false,
+              animation: 'none',
+              tabBarStyle: {
+                display: 'none',
+              },
             }}>
-            <Stack.Screen name="index" />
-            <Stack.Screen name="spread/index" />
-            <Stack.Screen name="review/index" />
-            <Stack.Screen name="about/index" />
-          </Stack>
+            <Tabs.Screen name="index" />
+            <Tabs.Screen name="spread" />
+            <Tabs.Screen name="review" />
+            <Tabs.Screen name="about" />
+          </Tabs>
           <NavigationBar />
         </LinearGradient>
       </SafeAreaView>

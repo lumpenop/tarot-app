@@ -35,7 +35,9 @@ const CustomWebView = forwardRef<WebView, CustomWebViewProps>(
           ref={ref}
           onMessage={handleOnMessage}
           onLoadEnd={handleLoadEnd}
-          source={{ uri: `${defaultUrl}/${path}` }}
+          source={{
+            uri: `${defaultUrl}${path.startsWith('/') ? path : `/${path}`}`,
+          }}
           style={{
             flex: 1,
             width: '100%',
