@@ -54,7 +54,6 @@ function Layout() {
           style={{
             height: bottomHeight,
             backgroundColor: '#100521',
-            opacity: 0.99,
           }}
         />
       )}

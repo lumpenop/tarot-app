@@ -22,49 +22,54 @@ function NavigationBar() {
   return (
     <View
       style={{
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        gap: 10,
-        width: '100%',
-        borderTopWidth: 0.5,
-        borderLeftWidth: 0.5,
-        borderRightWidth: 0.5,
-        paddingVertical: 6,
-        paddingHorizontal: 22,
-        borderColor: '#ffffff',
-        borderTopLeftRadius: 20,
-        borderTopRightRadius: 20,
-        backgroundColor: '#100521',
-        transform: [{ scale: 1.01 }],
+        backgroundColor: '#1e1b4b',
       }}>
-      {menuItems.map(item => {
-        const isActive = pathname === item.href
-        return (
-          <Link key={item.href} href={{ pathname: item.href }}>
-            <View
-              style={{
-                flex: 1,
-                flexDirection: 'column',
-                alignItems: 'center',
-                justifyContent: 'center',
-                gap: 5,
-              }}>
-              <Ionicons
-                name={item.icon}
-                size={24}
-                color={isActive ? '#E6ECF0' : '#A6958C'}
-              />
-              <Text
+      <View
+        style={{
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          gap: 10,
+          width: '100%',
+          borderTopWidth: 0.5,
+          borderLeftWidth: 0.5,
+          borderRightWidth: 0.5,
+          paddingVertical: 6,
+          paddingHorizontal: 22,
+          borderColor: '#ffffff',
+          borderTopLeftRadius: 20,
+          borderTopRightRadius: 20,
+          backgroundColor: '#100521',
+          transform: [{ scale: 1.01 }],
+        }}>
+        {menuItems.map(item => {
+          const isActive = pathname === item.href
+          return (
+            <Link key={item.href} href={{ pathname: item.href }}>
+              <View
                 style={{
-                  color: isActive ? '#E6ECF0' : '#A6958C',
-                  fontSize: 12,
+                  flex: 1,
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: 5,
                 }}>
-                {item.label}
-              </Text>
-            </View>
-          </Link>
-        )
-      })}
+                <Ionicons
+                  name={item.icon}
+                  size={24}
+                  color={isActive ? '#E6ECF0' : '#A6958C'}
+                />
+                <Text
+                  style={{
+                    color: isActive ? '#E6ECF0' : '#A6958C',
+                    fontSize: 12,
+                  }}>
+                  {item.label}
+                </Text>
+              </View>
+            </Link>
+          )
+        })}
+      </View>
     </View>
   )
 }
