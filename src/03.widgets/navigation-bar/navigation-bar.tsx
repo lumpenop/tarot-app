@@ -1,27 +1,21 @@
 import { Link, usePathname } from 'expo-router'
-import {
-  Info,
-  WalletCards,
-  MessageSquare,
-  Sparkles,
-  LucideProps,
-} from 'lucide-react-native'
+import { Ionicons } from '@expo/vector-icons'
 import { View, Text } from 'react-native'
 
 const menuItems: Array<{
   href: '/' | '/spread' | '/review' | '/about'
   label: string
-  icon: React.ForwardRefExoticComponent<
-    Omit<LucideProps, 'ref'> & React.RefAttributes<SVGSVGElement>
-  >
+  icon:
+    | 'sparkles-outline'
+    | 'wallet-outline'
+    | 'chatbubble-outline'
+    | 'information-circle-outline'
 }> = [
-  { href: '/', label: '원카드', icon: Sparkles },
-  { href: '/spread', label: '스프레드(준비중)', icon: WalletCards },
-  { href: '/review', label: '리뷰', icon: MessageSquare },
-  { href: '/about', label: '안내(준비중)', icon: Info },
+  { href: '/', label: '원카드', icon: 'sparkles-outline' },
+  { href: '/spread', label: '스프레드(준비중)', icon: 'wallet-outline' },
+  { href: '/review', label: '리뷰', icon: 'chatbubble-outline' },
+  { href: '/about', label: '안내(준비중)', icon: 'information-circle-outline' },
 ]
-
-// #A6958C - purple 300
 
 function NavigationBar() {
   const pathname = usePathname()
@@ -44,7 +38,6 @@ function NavigationBar() {
         transform: [{ scale: 1.01 }],
       }}>
       {menuItems.map(item => {
-        const Icon = item.icon
         const isActive = pathname === item.href
         return (
           <Link key={item.href} href={{ pathname: item.href }}>
@@ -56,7 +49,11 @@ function NavigationBar() {
                 justifyContent: 'center',
                 gap: 5,
               }}>
-              <Icon size={24} color={isActive ? '#E6ECF0' : '#A6958C'} />
+              <Ionicons
+                name={item.icon}
+                size={24}
+                color={isActive ? '#E6ECF0' : '#A6958C'}
+              />
               <Text
                 style={{
                   color: isActive ? '#E6ECF0' : '#A6958C',

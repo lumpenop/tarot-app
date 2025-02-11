@@ -41,10 +41,10 @@ function Layout() {
             screenListeners={{
               blur: () => false, // Prevents unmounting on blur
             }}>
-            <Stack.Screen name="home" />
-            <Stack.Screen name="spread" />
-            <Stack.Screen name="review" />
-            <Stack.Screen name="about" />
+            <Stack.Screen name="index" />
+            <Stack.Screen name="spread/index" />
+            <Stack.Screen name="review/index" />
+            <Stack.Screen name="about/index" />
           </Stack>
           <NavigationBar />
         </LinearGradient>
